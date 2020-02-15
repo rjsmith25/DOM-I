@@ -50,9 +50,24 @@ logo.setAttribute("src", siteContent["nav"]["img-src"]);
 let navItems = [...document.getElementsByTagName("a")];
 
 navItems.forEach((Atag, index) => {
-  Atag.style.color = "lightblue";
+  Atag.style.color = "green";
   Atag.innerHTML = siteContent["nav"][`nav-item-${index + 1}`];
 });
+
+// prepend to navigation
+let nav = document.getElementsByTagName("nav")[0];
+let newATag = document.createElement("a");
+newATag.textContent = "Login";
+newATag.style.color = "green";
+newATag.href = "#";
+nav.prepend(newATag);
+
+// appendChild to navigation
+let newATag2 = document.createElement("a");
+newATag2.textContent = "Forum";
+newATag2.style.color = "green";
+newATag2.href = "#";
+nav.appendChild(newATag2);
 
 // add content to call to action h1
 let ctaH1 = document.querySelector(".cta-text h1");
